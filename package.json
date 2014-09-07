@@ -1,0 +1,39 @@
+{
+  "name":         "mincer-erl",
+  "version":      "0.0.1",
+  "description":  "Custom Mincer binaries",
+  "main":         "index.js",
+  "bin": {
+    "mincer-erl-compile": "bin/compile.js",
+    "mincer-erl-serve":   "bin/serve.js"
+  },
+  "dependencies": {
+    "argparse":       "~ 0.1.15",
+    "mincer":         "~ 1.1.3",
+    "connect":        "*",
+    "autoprefixer":   "*",
+    "uglify-js":      "*",
+    "csso":           "*",
+    "ejs":            "*",
+    "coffee-script":  "*",
+    "jade":           "*",
+    "less":           "*",
+    "node-sass":      "*",
+    "stylus":         "*",
+    "react-tools":    "*"
+  },
+  "repository": {
+    "type": "git",
+    "url":  "git://github.com/artemeff/mincer-erl.git"
+  },
+  "keywords": [
+    "assets",
+    "erlang"
+  ],
+  "author":   "Yuri Artemev",
+  "license":  "MIT",
+  "bugs": {
+    "url": "https://github.com/artemeff/mincer-erl/issues"
+  },
+  "homepage": "https://github.com/artemeff/mincer-erl"
+}
