@@ -6,6 +6,7 @@ var env       = require('..'),
     fs        = require('fs'),
     path      = process.cwd() + '/priv/static/',
     manifest  = new Mincer.Manifest(env, path),
+    compiler  = require('../compiler'),
     ArgParser = require('argparse').ArgumentParser;
 
 // parse arguments
@@ -26,25 +27,4 @@ var args = cli.parseArgs();
 env.jsCompressor  = 'uglify';
 env.cssCompressor = 'csso';
 
-try {
-  var assets = args.files;
-
-  assets.map(function(file) {
-    var asset = env.findAsset(file);
-    if (asset) {
-      var filepath = path + file;
-      // TODO gzip
-      fs.writeFile(filepath, asset.toString(), function(err) {
-        if (err) {
-          console.log(err);
-        } else {
-          console.log("Saved to " + filepath);
-        }
-      });
-    } else {
-      console.log(file, 'not found or case errors');
-    }
-  });
-} catch (err) {
-  console.error("Error: " + (err.message || err.toString()));
-}
+compiler(args.files, path, env);

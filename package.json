@@ -1,15 +1,17 @@
 {
   "name":         "mincer-erl",
-  "version":      "0.0.1",
+  "version":      "0.0.2",
   "description":  "Custom Mincer binaries",
   "main":         "index.js",
   "bin": {
+    "mincer-erl-watch":   "bin/watch.js",
     "mincer-erl-compile": "bin/compile.js",
     "mincer-erl-serve":   "bin/serve.js"
   },
   "dependencies": {
     "argparse":       "~ 0.1.15",
     "mincer":         "~ 1.1.3",
+    "node-watch":     "~ 0.3.4",
     "connect":        "*",
     "autoprefixer":   "*",
     "uglify-js":      "*",

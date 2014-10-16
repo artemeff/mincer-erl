@@ -23,7 +23,7 @@ cli.addArgument(['-p', '--port'], {
 var args = cli.parseArgs();
 
 // cache
-env.cache = new Mincer.FileStore(path.join(__dirname, 'priv/.cache'));
+env.cache = new Mincer.FileStore(path.join(process.cwd(), 'priv/.cache'));
 
 // logging
 Mincer.logger.use(console);
