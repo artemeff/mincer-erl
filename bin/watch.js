@@ -32,10 +32,11 @@ env.cache = new Mincer.FileStore(path.join(process.cwd(), 'priv/.cache'));
 Mincer.logger.use(console);
 
 watch(source, function(changedFile) {
-  args.files.forEach(function(file) {
-    var changedFilename = path.basename(changedFile);
-    if (new RegExp(file + '*').test(changedFilename)) {
-      compiler([file], result, env);
-    }
-  });
+  // args.files.forEach(function(file) {
+  //   var changedFilename = path.basename(changedFile);
+  //   if (new RegExp(file + '*').test(changedFilename)) {
+  //     compiler([file], result, env);
+  //   }
+  // });
+  compiler(args.files, result, env);
 });
